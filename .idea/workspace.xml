@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="399d6348-89e4-425e-9ffb-b87fc0ed0c4f" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured-carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured-carousel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/huafu.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/huafu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/huanbao.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/huanbao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/renwen.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/renwen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/sheying.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/sheying.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/yinyue.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/yinyue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/banner.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/huafu.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/huafu.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/huanbao.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/huanbao.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/logo_demo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/logo_demo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/player1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/player1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/player2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/player2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/player3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/player3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/renwen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/renwen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/sheying.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sheying.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/images/yinyue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/yinyue.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/media/demo_music.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/media/demo_music.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +50,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Code\Hwork" />
       <recent name="E:\Code\Hwork\.idea\media" />
     </key>
   </component>
@@ -90,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763519430639</updated>
       <workItem from="1763519431709" duration="11058000" />
-      <workItem from="1763535720425" duration="858000" />
+      <workItem from="1763535720425" duration="1345000" />
     </task>
     <servers />
   </component>
