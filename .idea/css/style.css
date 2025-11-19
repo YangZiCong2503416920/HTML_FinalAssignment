@@ -114,10 +114,22 @@ nav ul li a:hover {
 }
 
 /* Banner */
-.banner img {
+/*.banner img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+ */
+
+/* 为 banner 图片设置样式 */
+.banner {
+    max-height: 100px; /* 限制最大高度，例如 300px */
+    width: auto;       /* 宽度自动调整 */
+    height: auto;      /* 高度自动按比例缩放 */
+    display: block;    /* 避免底部空白间隙 */
+    margin: 1px auto; /* 居中对齐，上下留空 */
+    border-radius: 8px; /* 可选：圆角美化 */
+    object-fit: cover; /* 关键！覆盖填充容器，不拉伸变形 */
 }
 
 /* Notice */
@@ -192,7 +204,7 @@ nav ul li a:hover {
 
 .club-image {
     flex: 1 1 300px; /* Grow, shrink, basis */
-    max-width: 100%; /* Prevent overflow */
+    max-width: 50%; /* Prevent overflow */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -260,45 +272,32 @@ footer {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 40px auto;
-    border-radius: 8px;
+    margin: 20px auto;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* 轮播项图片 */
-.carousel-item img {
-    width: 100%;
-    height: 400px; /* 固定高度，确保一致性 */
-    object-fit: cover; /* 图片填充整个区域 */
-    transition: transform 0.5s ease;
-}
-
-/* 控制按钮 */
-.carousel-controls {
+.carousel-inner {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: rgba(0,0,0,0.7);
+    transition: transform 0.5s ease;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+    position: relative;
+}
+
+.slide {
+    min-width: 100%;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 10;
+    width: 100%;
+    height: 100%;
 }
 
-.carousel-controls button {
-    background-color: rgba(255,255,255,0.8);
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #333;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.carousel-controls button:hover {
-    background-color: rgba(255,255,255,0.9);
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
