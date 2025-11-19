@@ -1,0 +1,304 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white !important; /* Ensure button text is white */
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo/title and tagline */
+}
+
+.logo {
+    height: 60px; /* Adjust size as needed */
+    width: auto;
+    margin-right: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 1em;
+}
+
+/* Navigation */
+nav {
+    background-color: #343a40;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #495057;
+    text-decoration: none;
+}
+
+
+/* Main Content */
+.main-content {
+    background-color: #fff;
+    padding: 30px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Banner */
+.banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Notice */
+.notice {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin: 20px 0;
+    border-left: 5px solid #007bff;
+    border-radius: 4px;
+}
+
+
+/* Featured Section & Cards */
+.featured-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.card h3 {
+    padding: 10px;
+    margin: 0;
+    font-size: 1.2em;
+    background-color: #f8f9fa;
+}
+
+.card p {
+    padding: 0 10px 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.card .btn {
+    display: block;
+    width: calc(100% - 20px); /* Account for padding */
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+/* Club Detail Page */
+.club-detail {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.club-image {
+    flex: 1 1 300px; /* Grow, shrink, basis */
+    max-width: 100%; /* Prevent overflow */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.club-info {
+    flex: 2 1 500px; /* Give more space to info */
+}
+
+.club-info p, .club-info ul {
+    margin-bottom: 15px;
+}
+
+.club-info ul {
+    padding-left: 20px;
+}
+
+/* About Page Form */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+}
+
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Push to bottom if using flex on body */
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content a {
+    color: #adb5bd;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+/* 轮播容器 */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 轮播项图片 */
+.carousel-item img {
+    width: 100%;
+    height: 400px; /* 固定高度，确保一致性 */
+    object-fit: cover; /* 图片填充整个区域 */
+    transition: transform 0.5s ease;
+}
+
+/* 控制按钮 */
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-controls button {
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(255,255,255,0.9);
+}
