@@ -5,15 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="399d6348-89e4-425e-9ffb-b87fc0ed0c4f" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured-carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/featured-carousel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/huafu.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/featured/huafu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/huanbao.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/featured/huanbao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/renwen.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/featured/renwen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/sheying.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/featured/sheying.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/featured/yinyue.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/featured/yinyue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/featured-carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured-carousel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/featured/huafu.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/huafu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/featured/huanbao.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/huanbao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/featured/renwen.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/renwen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/featured/sheying.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/sheying.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/featured/yinyue.html" beforeDir="false" afterPath="$PROJECT_DIR$/featured/yinyue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/huafu.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/huafu.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/huanbao.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/huanbao.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/logo_demo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/logo_demo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/player1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/player1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/player2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/player2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/player3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/player3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/renwen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/renwen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/sheying.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sheying.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/images/yinyue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/yinyue.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/media/demo_music.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/media/demo_music.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,32 +44,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="35g6aPjGJDjJdMtRS480qtNYq2D" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "D:/Users/YangZiCong/AppData/Roaming/JetBrains/WebStorm2025.1/node/versions/24.11.1/node",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;D:/Users/YangZiCong/AppData/Roaming/JetBrains/WebStorm2025.1/node/versions/24.11.1/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Code\Hwork\.idea\media" />
@@ -76,7 +89,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763519430639</updated>
-      <workItem from="1763519431709" duration="10949000" />
+      <workItem from="1763519431709" duration="11058000" />
+      <workItem from="1763535720425" duration="858000" />
     </task>
     <servers />
   </component>
