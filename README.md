@@ -1,9 +1,5 @@
 # 广建社联 - GuangJian Students Union Portal
 
-## 许可证 (License)
-
-本项目属于公共领域 (Public Domain)。您可以自由地使用、修改和分发此代码，无需任何限制。
-
 这是一个为广东建设职业技术学院（清远校区）设计的社团联合会信息门户网站原型。
 
 ## 项目简介 (Project Overview)
@@ -67,7 +63,8 @@ sudo systemctl restart nginx
 在浏览器中访问你的服务器 IP 或域名即可。
 
 
-项目结构 (File Structure)
+### 项目结构 (File Structure)
+
 HTML_FinalAssignment/
 index.html            ← 首页
 list.html             ← 所有社团列表页
@@ -95,15 +92,18 @@ media/                ← 音频文件
     demo_music.mp3    ← 音乐类社团宣传文件
 
 
-待办事项 (To-Do List)
+## 待办事项 (To-Do List)
 实现“社团详情”模态框或独立页面。
  优化轮播图自动播放逻辑，增加暂停/播放按钮。
  添加“校区筛选”功能。
  后续版本考虑引入后端框架和数据库以支持动态内容管理和用户交互。
  
  
-贡献者 (Contributors)
+## 贡献者 (Contributors)
 杨子聪 - 初始开发与设计 - [YangZC2503416920@163.com]
 
 
+## 许可证 (License)
+
+本项目属于公共领域 (Public Domain)。您可以自由地使用、修改和分发此代码，无需任何限制。
 致谢：对本网站部署至阿里云实例提供巨大帮助的林老师
