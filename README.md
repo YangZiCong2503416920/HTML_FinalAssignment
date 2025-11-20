@@ -62,7 +62,7 @@ sudo systemctl restart nginx
 确保服务器防火墙（如 ufw）和云服务商安全组（如阿里云）已开放 80 (HTTP) 端口。
 在浏览器中访问你的服务器 IP 或域名即可。
 
-
+```
 ### 项目结构 (File Structure)
 
 HTML_FinalAssignment/
@@ -101,9 +101,9 @@ media/                ← 音频文件
  
 ## 贡献者 (Contributors)
 杨子聪 - 初始开发与设计 - [YangZC2503416920@163.com]
+林老师 - 云服务器部署解决方案 - [null]
 
 
 ## 许可证 (License)
 
 本项目属于公共领域 (Public Domain)。您可以自由地使用、修改和分发此代码，无需任何限制。
-致谢：对本网站部署至阿里云实例提供巨大帮助的林老师
