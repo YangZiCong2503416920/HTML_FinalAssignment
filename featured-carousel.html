@@ -73,19 +73,12 @@
 
     <div class="carousel">
       <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="slide">
-          <img src="images/player1.jpg" alt="艺术团龙狮队">
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="images/player2.jpg" alt="一起玩手工协会">
-        </div>
-        <!-- Slide 3 -->
-        <div class="slide">
-          <img src="images/player3.jpg" alt="枫之舞协会">
-        </div>
+        <img src="images/player1.jpg" alt="艺术团龙狮队">
+        <img src="images/player2.jpg" alt="一起玩手工协会">
+        <img src="images/player3.jpg" alt="枫之舞协会">
       </div>
+      <button class="carousel-control prev">❮</button>
+      <button class="carousel-control next">❯</button>
     </div>
   </div>
 </main>
@@ -100,33 +93,34 @@
 
 <!-- JavaScript 控制轮播 -->
 <script>
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.carousel');
+    const images = document.querySelectorAll('.carousel-inner img');
+    let currentIndex = 0;
 
-  function initCarousel() {
-    updateCarousel();
-  }
+    // 初始显示第一张
+    images[currentIndex].classList.add('active');
 
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  }
+    // 下一张按钮
+    const nextBtn = document.querySelector('.next');
+    nextBtn.addEventListener('click', function () {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    });
 
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-  }
+    // 上一张按钮
+    const prevBtn = document.querySelector('.prev');
+    prevBtn.addEventListener('click', function () {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      images[currentIndex].classList.add('active');
+    });
 
-  function updateCarousel() {
-    const carouselInner = document.querySelector('.carousel-inner');
-    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  // 页面加载完成后自动开始轮播
-  window.addEventListener('DOMContentLoaded', () => {
-    initCarousel(); // 确保初始化
-    setInterval(nextSlide, 5000); // 每 5 秒自动切换
+    // 自动轮播（每3秒切换）
+    setInterval(function () {
+      nextBtn.click();
+    }, 3000);
   });
 </script>
 
