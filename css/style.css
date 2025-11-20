@@ -485,3 +485,61 @@ footer {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+/*
+.list-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.list-card-container .card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+}
+ */
+
+/* 特定于 list.html 页面的卡片容器 */
+.list-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 特定于 list.html 页面的卡片 */
+.list-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+}
+
+/* 特定于 list.html 页面的卡片图片 */
+.list-card .card-img {
+    width: 100%;
+    height: 200px; /* 保持3:2比例，高度可以按需调整 */
+    object-fit: cover; /* 使用cover保留图片的比例和裁剪 */
+    display: block;
+    border-bottom: 1px solid #eee;
+}
