@@ -61,49 +61,50 @@ sudo systemctl restart nginx
 
 确保服务器防火墙（如 ufw）和云服务商安全组（如阿里云）已开放 80 (HTTP) 端口。
 在浏览器中访问你的服务器 IP 或域名即可。
-
 ```
-### 项目结构 (File Structure)
 
+
+### 项目结构 (File Structure)
+```bash
 HTML_FinalAssignment/
-index.html            ← 首页
-list.html             ← 所有社团列表页
-about.html            ← 关于我们/联系方式页
-featured/             ← 精选社团详情页
-    huafu.html        ← 华襟汉服社
-    sheying.html      ← 摄影协会
-    yinyue.html       ← 音乐类社团
-    huanbao.html      ← 绿科环保协会
-    renwen.html       ← 文学类社团
-css/
-    style.css         ← 样式表
-images/
-    logo.png          ← 网站 Logo
-    banner.jpg        ← 首页 Banner 图
-    huafu.jpg         ← 华襟汉服社图片
-    sheying.jpg       ← 摄影协会图片
-    yinyue.jpg        ← 音乐类社团图片
-    huanbao.jpg       ← 环保协会图片
-    renwen.jpg        ← 文学类社团图片
-    player1.jpg       ← 精选社团轮播图片
-    player2.jpg       ← 精选社团轮播图片
-    player3.jpg       ← 精选社团轮播图片
-media/                ← 音频文件
-    demo_music.mp3    ← 音乐类社团宣传文件
+├── index.html             ← 首页
+├── list.html              ← 所有社团列表页
+├── about.html             ← 关于我们/联系方式页
+├── featured/              ← 精选社团详情页
+│   ├── huafu.html         ← 华襟汉服社
+│   ├── sheying.html       ← 摄影协会
+│   ├── yinyue.html        ← 音乐类社团
+│   ├── huanbao.html       ← 绿科环保协会
+│   └── renwen.html        ← 文学类社团
+├── css/
+│   └── style.css          ← 样式表
+├── images/
+│   ├── logo.png           ← 网站 Logo
+│   ├── banner.jpg         ← 首页 Banner 图
+│   ├── huafu.jpg          ← 华襟汉服社图片
+│   ├── sheying.jpg        ← 摄影协会图片
+│   ├── yinyue.jpg         ← 音乐类社团图片
+│   ├── huanbao.jpg        ← 环保协会图片
+│   ├── renwen.jpg         ← 文学类社团图片
+│   ├── player1.jpg        ← 精选社团轮播图片
+│   ├── player2.jpg        ← 精选社团轮播图片
+│   └── player3.jpg        ← 精选社团轮播图片
+└── media/
+    └── demo_music.mp3     ← 音频文件
+```
 
 
 ## 待办事项 (To-Do List)
-实现“社团详情”模态框或独立页面。
- 优化轮播图自动播放逻辑，增加暂停/播放按钮。
- 添加“校区筛选”功能。
- 后续版本考虑引入后端框架和数据库以支持动态内容管理和用户交互。
+* 实现“社团详情”模态框或独立页面。
+* 优化轮播图自动播放逻辑，增加暂停/播放按钮。
+* 添加“校区筛选”功能。
+* 后续版本考虑引入后端框架和数据库以支持动态内容管理和用户交互。
  
  
 ## 贡献者 (Contributors)
-杨子聪 - 初始开发与设计 - [YangZC2503416920@163.com]
-林老师 - 云服务器部署解决方案 - [null]
+* 杨子聪 - 初始开发与设计 - [YangZC2503416920@163.com]
+* 林老师 - 云服务器部署解决方案 - [null]
 
 
 ## 许可证 (License)
-
 本项目属于公共领域 (Public Domain)。您可以自由地使用、修改和分发此代码，无需任何限制。
