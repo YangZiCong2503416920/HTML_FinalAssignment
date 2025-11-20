@@ -56,14 +56,35 @@
   </div>
 </header>
 
-<!-- Navigation -->
-<nav>
-  <div class="container">
-    <ul>
-      <li><a href="index.html">首页</a></li>
-      <li><a href="featured-carousel.html">精选社团</a></li> <!-- 注意这里改成了轮播页 -->
-      <li><a href="list.html">所有社团</a></li>
-      <li><a href="about.html">关于我们</a></li>
+<!-- 导航栏 -->
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Logo / Brand -->
+    <div class="nav-logo">
+      <a href="index.html">广建社联</a>
+    </div>
+
+    <!-- 汉堡按钮 (仅在小屏幕上显示) -->
+    <div class="nav-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- 导航链接 -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link" id="nav-home">首页</a>
+      </li>
+      <li class="nav-item">
+        <a href="featured-carousel.html" class="nav-link" id="nav-featured">精选社团</a>
+      </li>
+      <li class="nav-item">
+        <a href="list.html" class="nav-link" id="nav-list">所有社团</a>
+      </li>
+      <li class="nav-item">
+        <a href="about.html" class="nav-link" id="nav-about">关于我们</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -169,6 +190,27 @@
     <p>友情链接：<a href="https://www.gdcvi.edu.cn/" target="_blank">学校官网</a> | <a href="http://yiban.gdcvi.edu.cn/" target="_blank">易班</a></p>
   </div>
 </footer>
+
+//汉堡菜单
+<script>
+  // 汉堡菜单切换
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navList = document.querySelector('.nav-menu');
+
+  mobileMenu.addEventListener('click', function () {
+    mobileMenu.classList.toggle('active');
+    navList.classList.toggle('active');
+  });
+
+  // 高亮当前页
+  document.addEventListener("DOMContentLoaded", function() {
+    const currentPageId = 'nav-list';
+    const activeLink = document.getElementById(currentPageId);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  });
+</script>
 
 </body>
 </html>
