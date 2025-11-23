@@ -818,3 +818,63 @@ footer {
 #backToTop:active {
     transform: scale(0.95); /* 按下时缩小一点 */
 }
+
+/* --- 卡片淡入动画 --- */
+
+/* 定义名为 fadeIn 的关键帧动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;          /* 从完全透明开始 */
+        transform: translateY(20px); /* 可选：从下方轻微上移 */
+    }
+    to {
+        opacity: 1;          /* 到完全不透明结束 */
+        transform: translateY(0);    /* 回到原位 */
+    }
+}
+
+/* 应用动画到卡片 */
+.list-card {
+    opacity: 0; /* 初始状态：隐藏 */
+    animation: fadeIn 0.6s ease-out forwards; /* 应用动画 */
+    /*
+       animation 属性详解:
+       - fadeIn: 动画名称
+       - 0.6s: 动画持续时间 0.6 秒
+       - ease-out: 缓动函数，开始快，结束慢
+       - forwards: 动画结束后保持最后一帧的状态 (即 opacity: 1)
+    */
+
+
+    /* 可选：给每张卡片设置略微不同的延迟，营造依次出现的效果 */
+    /*
+    animation-delay: calc(var(--card-index) * 0.1s);
+    */
+}
+
+/* --- 滚动触发动画 - 卡片淡入 --- */
+
+/* 定义名为 fadeIn 的关键帧动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 卡片的初始状态：隐藏 */
+.list-card {
+    opacity: 0;
+    transform: translateY(20px);
+    /* 可选：禁用过渡，让 JS 控制动画开始 */
+    transition: none;
+}
+
+/* 当添加 .show 类时，应用动画 */
+.list-card.show {
+    animation: fadeIn 0.6s ease-out forwards;
+}

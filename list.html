@@ -615,5 +615,62 @@
   });
 </script>
 
+// 添加 stagger 效果
+<script>
+  // 等待 DOM 加载完成
+  document.addEventListener("DOMContentLoaded", function() {
+    // 获取所有卡片元素
+    const cards = document.querySelectorAll(".list-card");
+
+    // 遍历每张卡片
+    cards.forEach((card, index) => {
+      // 计算延迟时间 (例如: 第1张0s, 第2张0.1s, ...)
+      const delay = index * 0.1; // 单位是秒
+
+      // 设置自定义样式 (注意单位 s)
+      card.style.animationDelay = `${delay}s`;
+    });
+  });
+</script>
+
+/* 滚动触发动画 */
+<script>
+  // 等待 DOM 加载完成
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. 获取所有需要观察的卡片元素
+    const cards = document.querySelectorAll(".list-card");
+
+    // 2. 创建 Intersection Observer 实例
+    //    回调函数会在元素可见性变化时被调用
+    const observer = new IntersectionObserver((entries) => {
+      // entries 是一个数组，包含了所有被观察的元素及其状态变化信息
+      entries.forEach(entry => {
+        // entry.target 是当前正在被观察的 DOM 元素
+        // entry.isIntersecting 是一个布尔值，表示该元素是否进入了视口
+
+        if (entry.isIntersecting) {
+          // 3. 如果元素进入了视口
+          //    给它添加 'show' 类以触发动画
+          entry.target.classList.add("show");
+
+          // 4. （可选）一旦动画播放过，就停止观察这个元素，提高性能
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      // 5. （可选）配置项：设置触发回调的阈值
+      //    threshold: 0.1 表示当元素有 10% 进入视口时就触发
+      threshold: 0.1
+    });
+
+    // 6. 开始观察每一个卡片元素
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+  }); // DOMContentLoaded end
+</script>
+
 </body>
 </html>
