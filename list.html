@@ -581,5 +581,39 @@
   });
 </script>
 
+<!-- 返回顶部按钮 -->
+<button id="backToTop" title="返回顶部">
+  <span>↑</span>
+</button>
+
+<script>
+  // 获取返回顶部按钮
+  const backToTopButton = document.getElementById("backToTop");
+
+  // 监听窗口滚动事件
+  window.addEventListener("scroll", function() {
+    // 获取页面垂直滚动的距离
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+    // 如果滚动距离大于 300px，则显示按钮
+    if (scrollY > 300) {
+      backToTopButton.classList.add("show");
+    } else {
+      backToTopButton.classList.remove("show");
+    }
+  });
+
+  // 监听按钮点击事件
+  backToTopButton.addEventListener("click", function(e) {
+    e.preventDefault(); // 阻止默认行为（如果用了 <a> 标签）
+
+    // 平滑滚动到顶部
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // 平滑滚动
+    });
+  });
+</script>
+
 </body>
 </html>
