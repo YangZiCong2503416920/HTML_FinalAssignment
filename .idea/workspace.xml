@@ -7,7 +7,7 @@
     <list default="true" id="399d6348-89e4-425e-9ffb-b87fc0ed0c4f" name="更改" comment="README文档美化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
       <workItem from="1763651555403" duration="7024000" />
       <workItem from="1763659706521" duration="521000" />
       <workItem from="1763903235639" duration="36000" />
-      <workItem from="1763910228932" duration="3749000" />
+      <workItem from="1763910228932" duration="4415000" />
     </task>
     <task id="LOCAL-00001" summary="README文档美化">
       <option name="closed" value="true" />

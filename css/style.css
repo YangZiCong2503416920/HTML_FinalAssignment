@@ -669,3 +669,82 @@ footer {
     background-color: #0056b3; /* 更深的颜色 */
     transform: scale(0.98); /* 轻微缩小 */
 }
+
+/*颜色分类*/
+/* 默认样式 */
+.list-card {
+    background-color: #ffffff;
+    border-left: 5px solid #ccc; /* 默认灰色左边框 */
+    transition: all 0.3s ease;
+}
+
+/* 文化艺术类 */
+.type-culture {
+    border-left-color: #28a745; /* 绿色 */
+    background-color: #e6f4ea; /* 浅绿色背景 */
+}
+
+/* 体育健身类 */
+.type-sports {
+    border-left-color: #fd7e14; /* 橙色 */
+    background-color: #fff3e0; /* 浅橙色背景 */
+}
+
+/* 学术科技类 */
+.type-academic {
+    border-left-color: #007bff; /* 蓝色 */
+    background-color: #e7f3ff; /* 浅蓝色背景 */
+}
+
+/* 服务实践/其他类 */
+.type-service {
+    border-left-color: #6c757d; /* 灰色 */
+    background-color: #f8f9fa; /* 浅灰色背景 */
+}
+
+/* 悬停效果强化 */
+.type-academic:hover {
+    background-color: #d0ebff;
+    border-left-color: #0056b3;
+}
+
+.type-culture:hover {
+    background-color: #d1e7dd;
+    border-left-color: #146c43;
+}
+
+.type-volunteer:hover {
+    background-color: #ffeaa7;
+    border-left-color: #e0a800;
+}
+
+.type-other:hover {
+    background-color: #e9ecef;
+    border-left-color: #495057;
+}
+
+/* --- 小图标样式 --- */
+
+/* 为图标预留空间和样式 */
+.list-card h3::before {
+    margin-right: 8px; /* 图标和文字之间的间距 */
+    font-size: 1.2em; /* 调整图标大小 */
+    vertical-align: middle; /* 垂直居中对齐 */
+}
+
+/* 不同类型显示不同图标 */
+.type-culture h3::before {
+    content: "🎨"; /* 文化艺术 */
+}
+
+.type-sports h3::before {
+    content: "⚽"; /* 体育健身 */
+}
+
+.type-academic h3::before {
+    content: "🔬"; /* 学术科技 */
+}
+
+.type-service h3::before {
+    content: "🤝"; /* 服务实践 */
+}
