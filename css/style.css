@@ -113,23 +113,38 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Banner */
-/*.banner img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
- */
-
-/* 为 banner 图片设置样式 */
+/* 响应式 Banner 图片 */
+/* Banner 容器：设置为 50% 宽度并居中 */
 .banner {
-    max-height: 100px; /* 限制最大高度，例如 300px */
-    width: auto;       /* 宽度自动调整 */
-    height: auto;      /* 高度自动按比例缩放 */
-    display: block;    /* 避免底部空白间隙 */
-    margin: 1px auto; /* 居中对齐，上下留空 */
-    border-radius: 8px; /* 可选：圆角美化 */
-    object-fit: cover; /* 关键！覆盖填充容器，不拉伸变形 */
+    width: 50%;
+    margin: 30px auto; /* 上下留白，左右自动居中 */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center; /* 让图片水平居中 */
+    box-sizing: border-box; /* 关键！防止 padding 挤占宽度 */
+    transition: transform 0.3s ease;
+}
+
+/* Banner 图片：必须填满容器 */
+.banner img {
+    width: 100%; /* 填满 .banner 容器 */
+    height: auto;
+    display: block;
+    border-radius: inherit;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+    .banner {
+        width: 90%; /* 移动端更宽一点 */
+        margin: 20px auto;
+    }
+}
+/*增加鼠标放置悬停动画*/
+.banner:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Notice */
@@ -358,85 +373,148 @@ footer {
 
 /* --- 导航栏样式 --- */
 
+/* ==============================
+   导航栏基础样式（适用于桌面和移动端）
+============================== */
+
 .navbar {
-    background-color: #333; /* 深色背景 */
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    background-color: #333;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative; /* 确保 z-index 生效 */
+    z-index: 1000; /* 确保导航栏在最上层 */
 }
 
 .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 60px;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
-}
-
-.nav-logo {
-    color: #fff;
-    align-items: center;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    flex-grow: 1;
+    height: 60px; /* 固定导航栏高度 */
 }
 
 .nav-logo a {
-    color: #fff;
+    color: white;
     text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    text-align: center;
-    margin-right: 2rem;
-}
-
-.nav-item {
-    line-height: 40px;
-    margin-left: 1.5rem;
-}
-
-.nav-link {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease-out;
-}
-
-.nav-link:hover {
-    background-color: #01bf71; /* 悬停颜色 */
-    color: #fff;
-    transition: all 0.3s ease-out;
-}
-
-/* 汉堡按钮样式 */
+/* 汉堡按钮 (默认隐藏) */
 .nav-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 5px;
 }
 
 .bar {
     width: 25px;
     height: 3px;
-    margin: 3px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: #fff;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
 }
 
+
+/* 导航链接列表 */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: block;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #007bff;
+}
+
+/* ==============================
+   移动端专用样式 (当屏幕宽度 <= 768px)
+============================== */
+@media screen and (max-width: 768px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .nav-logo {
+        order: 1;
+    }
+
+    .nav-toggle {
+        display: flex;
+        order: 2;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px; /* 与导航栏高度对齐 */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        transition: all 0.3s ease;
+
+        /* 初始状态：隐藏 */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 15px;
+        font-size: 1.1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 防止页面滚动 */
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    /* 主内容区：可选的视觉效果 */
+    .nav-menu.active ~ .main-content {
+        opacity: 0.8;
+        filter: blur(2px); /* 可选：模糊背景 */
+    }
+}
 
 /* --- 响应式设计 --- */
 @media screen and (max-width: 768px) {
@@ -561,4 +639,33 @@ footer {
     margin-bottom: 20px;
     color: #333;
     font-size: 1.5em;
+}
+
+/* --- 移动端优化 --- */
+
+/* 当屏幕宽度 <= 480px 时，强制卡片为单列显示，提高可读性 */
+@media screen and (max-width: 480px) {
+    .list-card-container {
+        grid-template-columns: 1fr; /* 强制只有一列 */
+        padding: 15px; /* 减少左右边距 */
+        gap: 20px; /* 减少卡片之间的间距 */
+    }
+
+    .list-card {
+        padding: 12px; /* 减少卡片内边距 */
+    }
+
+    .list-card h3 {
+        font-size: 1.1em; /* 稍微减小标题字号 */
+        margin: 10px 0 8px 0; /* 调整上下间距 */
+    }
+
+    .list-btn {
+        font-size: 0.9em; /* 按钮文字稍小一点 */
+        padding: 8px 12px; /* 缩小按钮尺寸 */
+    }
+}
+.btn.list-btn:active {
+    background-color: #0056b3; /* 更深的颜色 */
+    transform: scale(0.98); /* 轻微缩小 */
 }
