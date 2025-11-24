@@ -316,6 +316,7 @@ footer {
 }
 
 /* 轮播容器 */
+/* --- 轮播图容器 --- */
 .carousel {
     position: relative;
     width: 100%;
@@ -324,16 +325,21 @@ footer {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* 使用 aspect-ratio 维持宽高比 */
+    aspect-ratio: 16 / 9;
 }
 
+/* --- 轮播图内部容器 --- */
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease;
-    height: 0;
-    padding-bottom: 56.25%; /* 16:9 */
-    position: relative;
+    /* 关键：设置宽度和高度 */
+    width: 100%;
+    height: 100%; /* 让它撑满 .carousel */
+    position: relative; /* 为绝对定位的 .slide 提供参照系 */
 }
 
+/* --- 幻灯片 --- */
 .slide {
     min-width: 100%;
     position: absolute;
@@ -341,8 +347,11 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
+    /* 确保图片不被裁剪 */
+    overflow: hidden;
 }
 
+/* --- 图片 --- */
 .slide img {
     width: 100%;
     height: 100%;
@@ -350,58 +359,58 @@ footer {
     display: block;
 }
 
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.carousel-inner {
-    position: relative;
-    overflow: hidden; /* 关键！隐藏超出部分 */
-    height: 400px;
-}
-
-.carousel-inner img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持比例，填充容器 */
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-inner img.active {
-    opacity: 1;
-}
-
+/* --- 控制按钮 --- */
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
     color: white;
     border: none;
-    padding: 10px;
+    font-size: 24px;
+    padding: 10px 15px;
     cursor: pointer;
-    font-size: 20px;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    z-index: 10; /* 确保在图片之上 */
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* 悬停加深 */
+}
+
+.carousel-control.prev {
+    left: 15px;
+}
+
+.carousel-control.next {
+    right: 15px;
+}
+
+/* --- 指示器 (Dots) --- */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 10px; /* 点之间的间距 */
+    z-index: 10;
 }
 
-.prev {
-    left: 10px;
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明白 */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.next {
-    right: 10px;
+.indicator-dot.active,
+.indicator-dot:hover {
+    background-color: white; /* 白色表示当前/悬停 */
 }
 
 /* --- 导航栏样式 --- */

@@ -94,10 +94,21 @@
 
     <div class="carousel">
       <div class="carousel-inner">
-        <img src="images/longshi.jpg" alt="艺术团龙狮队">
-        <img src="images/yiqiwan.jpg" alt="一起玩手工协会">
-        <img src="images/fengzhiwu.jpg" alt="枫之舞协会">
+        <div class="slide">
+          <img src="images/longshi.jpg" alt="艺术团龙狮队">
+        </div>
+        <div class="slide">
+          <img src="images/yiqiwan.jpg" alt="一起玩手工协会">
+        </div>
+        <div class="slide">
+          <img src="images/fengzhiwu.jpg" alt="枫之舞协会">
+        </div>
       </div>
+
+      <!-- 指示器 -->
+      <div class="carousel-indicators"></div>
+
+      <!-- 控制按钮 -->
       <button class="carousel-control prev">❮</button>
       <button class="carousel-control next">❯</button>
     </div>
@@ -113,56 +124,121 @@
 </footer>
 
 <!-- JavaScript 控制轮播 -->
+<!-- 放在 </body> 标签前，替换掉你原来的两个 <script> 标签 -->
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.carousel');
-    const images = document.querySelectorAll('.carousel-inner img');
+
+    // --- 轮播图逻辑 ---
+
+    const carouselInner = document.querySelector('.carousel-inner');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+
+    if (!carouselInner || !slides.length || !prevBtn || !nextBtn || !indicatorsContainer) {
+      console.error("轮播图组件缺失，请检查HTML结构。");
+      return; // 如果关键元素不存在，则不执行轮播逻辑
+    }
+
     let currentIndex = 0;
+    const totalSlides = slides.length;
 
-    // 初始显示第一张
-    images[currentIndex].classList.add('active');
+    // --- 初始化指示器 ---
+    function createIndicators() {
+      indicatorsContainer.innerHTML = ''; // 清空现有指示器
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('indicator-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => goToSlide(i));
+        indicatorsContainer.appendChild(dot);
+      }
+    }
 
-    // 下一张按钮
-    const nextBtn = document.querySelector('.next');
-    nextBtn.addEventListener('click', function () {
-      images[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].classList.add('active');
-    });
+    // --- 更新轮播图位置和指示器 ---
+    function updateCarousel() {
+      const translateXValue = -currentIndex * 100;
+      carouselInner.style.transform = `translateX(${translateXValue}%)`;
 
-    // 上一张按钮
-    const prevBtn = document.querySelector('.prev');
-    prevBtn.addEventListener('click', function () {
-      images[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      images[currentIndex].classList.add('active');
-    });
+      // 更新指示器状态
+      document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
 
-    // 自动轮播（每3秒切换）
-    setInterval(function () {
-      nextBtn.click();
-    }, 3000);
-  });
-</script>
+      // 调试日志
+      console.log("当前索引:", currentIndex, "Transform:", translateXValue + "%");
+    }
 
-<script>
-  // 汉堡菜单切换
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navList = document.querySelector('.nav-menu');
+    // --- 切换到指定索引的幻灯片 ---
+    function goToSlide(index) {
+      if (index >= 0 && index < totalSlides) { // 增加边界检查
+        currentIndex = index;
+        updateCarousel();
+      }
+    }
 
-  mobileMenu.addEventListener('click', function () {
-    mobileMenu.classList.toggle('active');
-    navList.classList.toggle('active');
-  });
+    // --- 下一张 ---
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
 
-  // 高亮当前页
-  document.addEventListener("DOMContentLoaded", function() {
-    const currentPageId = 'nav-featured';
+    // --- 上一张 ---
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    // --- 事件监听 ---
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // --- 自动轮播 ---
+    let autoPlayInterval = setInterval(nextSlide, 3000);
+
+    // --- 鼠标悬停暂停自动播放 ---
+    const carouselElement = document.querySelector('.carousel');
+    if (carouselElement) {
+      carouselElement.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+      carouselElement.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(nextSlide, 3000);
+      });
+    }
+
+
+    // --- 导航栏逻辑 ---
+
+    // 高亮当前页
+    const currentPageId = 'nav-featured'; // 对于此页面是固定的
     const activeLink = document.getElementById(currentPageId);
     if (activeLink) {
       activeLink.classList.add('active');
     }
-  });
+
+    // 汉堡菜单切换
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-menu');
+
+    if (mobileMenu && navList) {
+      // 确保点击汉堡菜单时，只触发一次 toggle
+      mobileMenu.removeEventListener('click', toggleMobileMenu); // 防止重复绑定
+      mobileMenu.addEventListener('click', toggleMobileMenu);
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle('active');
+        navList.classList.toggle('active');
+      }
+    }
+
+
+    // --- 初始化 ---
+    createIndicators();
+    updateCarousel(); // 显示第一张
+
+  }); // DOMContentLoaded end
 </script>
 
 </body>
