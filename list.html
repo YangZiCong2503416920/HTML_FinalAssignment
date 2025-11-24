@@ -669,5 +669,45 @@
   }); // DOMContentLoaded end
 </script>
 
+<script>
+  // 等待 DOM 加载完成
+  document.addEventListener('DOMContentLoaded', function () {
+    // 1. 获取必要的元素
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    // 2. 添加点击事件监听器到汉堡按钮
+    hamburger.addEventListener('click', function () {
+      // 3. 切换汉堡按钮和菜单的 'active' 类
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // 4. （可选）点击菜单项后自动关闭菜单
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // 5. （可选）点击菜单外部区域关闭菜单
+    // 注意：这个实现可能需要调整，因为点击菜单内部也会触发。
+    // 一个更健壮的方法是监听 document click，然后检查点击目标是否在菜单内。
+    document.addEventListener('click', function(event) {
+      // 如果点击的目标不是汉堡按钮也不是菜单本身，并且菜单是打开的
+      if (!hamburger.contains(event.target) &&
+              !navMenu.contains(event.target) &&
+              navMenu.classList.contains('active')) {
+
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+
+  });
+</script>
+
 </body>
 </html>

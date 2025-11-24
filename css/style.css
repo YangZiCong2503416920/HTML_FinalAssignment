@@ -98,13 +98,26 @@ header p {
 /* Navigation */
 nav {
     background-color: #343a40;
-    padding: 10px 0;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky; /* 固定在顶部 */
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 20px; /* 导航项间距 */
+}
+
+
+nav li {
+    /* margin: 0 15px; */ /* 移除或注释掉旧的 margin */
 }
 
 nav ul li {
@@ -452,109 +465,73 @@ footer {
 }
 
 .nav-link {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1rem;/* 与正文一致或稍小 */
     font-weight: 500; /* Medium */
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
     transition: background-color 0.3s;
     display: block;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    background-color: #007bff;
+    background-color: #e9ecef;
+    color: #333;
 }
 
-/* ==============================
-   移动端专用样式 (当屏幕宽度 <= 768px)
-============================== */
+/* --- 响应式设计 - 小屏幕下导航栏优化 --- */
 @media screen and (max-width: 768px) {
-
-    .nav-container {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 20px;
-    }
-
-    .nav-logo {
-        order: 1;
-    }
-
-    .nav-toggle {
+    /* 显示汉堡按钮 */
+    .hamburger {
         display: flex;
-        order: 2;
     }
 
-    .nav-menu {
-        position: absolute;
-        top: 60px; /* 与导航栏高度对齐 */
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 999;
-        transition: all 0.3s ease;
-
-        /* 初始状态：隐藏 */
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
-    }
-
-    .nav-menu.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .nav-item {
-        margin: 10px 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-link {
-        padding: 15px;
-        font-size: 1.1em;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* 防止页面滚动 */
-    body.nav-open {
-        overflow: hidden;
-    }
-
-    /* 主内容区：可选的视觉效果 */
-    .nav-menu.active ~ .main-content {
-        opacity: 0.8;
-        filter: blur(2px); /* 可选：模糊背景 */
-    }
-}
-
-/* --- 响应式设计 --- */
-@media screen and (max-width: 768px) {
+    /* 隐藏导航菜单 */
     .nav-menu {
         position: fixed;
-        left: -100%;
-        top: 60px;
+        left: -100%; /* 初始隐藏在屏幕左侧 */
+        top: 0;
         flex-direction: column;
-        background-color: #333;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-        margin: 0;
+        background-color: #fff;
+        width: 70%; /* 菜单宽度 */
+        height: 100vh; /* 全屏高度 */
+        padding: 80px 20px 20px 20px; /* 顶部留出汉堡按钮空间 */
+        transition: left 0.3s ease; /* 平滑滑入滑出 */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 9; /* 在汉堡按钮之下 */
     }
 
+    /* 当菜单激活时，滑入屏幕 */
     .nav-menu.active {
         left: 0;
+    }
+
+    /* 调整菜单项样式 */
+    .nav-menu li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu .nav-link {
+        display: block;
+        padding: 15px;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #eee; /* 可选：添加分隔线 */
+    }
+
+    /* 可选：添加一个遮罩层，点击遮罩也能关闭菜单 */
+    .nav-menu.active::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
+        z-index: -1; /* 在菜单内容之下 */
     }
 
     .nav-item {
@@ -566,6 +543,7 @@ footer {
         padding: 1rem;
         width: 100%;
         display: table;
+        color: #ffffff;
     }
 
     .nav-toggle {
@@ -877,4 +855,43 @@ footer {
 /* 当添加 .show 类时，应用动画 */
 .list-card.show {
     animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* --- 优化导航栏在小屏幕下的表现 --- */
+/* --- 导航栏样式 (更新) --- */
+/* --- 汉堡菜单按钮样式 --- */
+.hamburger {
+    display: none; /* 默认隐藏 */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10; /* 确保在菜单之上 */
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #333; /* 汉堡线条颜色 */
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: center;
+}
+
+/* 汉堡按钮激活时的动画 (X 形) - 可选 */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
 }
